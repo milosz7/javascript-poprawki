@@ -57,27 +57,6 @@ let computerScore = 0;
 
 let score = computerScore + ' - ' + playerScore;
 
-document.getElementById('playRock').addEventListener('click', function () {
-  playGame(1);
-  this.style.fontSize = '1.8rem';
-  setTimeout(function () {
-    playRock.style.fontSize = '2rem';
-  }, 100);
-});
-document.getElementById('playPaper').addEventListener('click', function () {
-  playGame(2);
-  this.style.fontSize = '1.8rem';
-  setTimeout(function () {
-    playPaper.style.fontSize = '2rem';
-  }, 100);
-});
-document.getElementById('playScissors').addEventListener('click', function () {
-  playGame(3);
-  this.style.fontSize = '1.8rem';
-  setTimeout(function () {
-    playScissors.style.fontSize = '2rem';
-  }, 100);
-});
 document.getElementById('buttonReset').addEventListener('click', function () {
   resetGame();
   this.style.fontSize = '0.7rem';
@@ -85,3 +64,55 @@ document.getElementById('buttonReset').addEventListener('click', function () {
     buttonReset.style.fontSize = '0.8rem';
   }, 100);
 });
+
+if (window.innerWidth > 450) {
+  document.getElementById('playRock').addEventListener('click', function () {
+    playGame(1);
+    let button = this;
+    button.style.fontSize = '1.8rem';
+    setTimeout(function () {
+      button.style.fontSize = '2rem';
+    }, 100);
+  });
+  document.getElementById('playPaper').addEventListener('click', function () {
+    playGame(2);
+    let button = this;
+    button.style.fontSize = '1.8rem';
+    setTimeout(function () {
+      button.style.fontSize = '2rem';
+    }, 100);
+  });
+  document.getElementById('playScissors').addEventListener('click', function () {
+    playGame(3);
+    let button = this;
+    button.style.fontSize = '1.8rem';
+    setTimeout(function () {
+      button.style.fontSize = '2rem';
+    }, 100);
+  });
+} else {
+  document.getElementById('playRock').addEventListener('click', function () {
+    playGame(1);
+    let button = this;
+    button.style.fontSize = '1rem';
+    setTimeout(function () {
+      button.style.fontSize = '1.2rem';
+    }, 100);
+  });
+  document.getElementById('playPaper').addEventListener('click', function () {
+    playGame(2);
+    let button = this;
+    button.style.fontSize = '1rem';
+    setTimeout(function () {
+      button.style.fontSize = '1.2rem';
+    }, 100);
+  });
+  document.getElementById('playScissors').addEventListener('click', function () {
+    playGame(3);
+    let button = this;
+    button.style.fontSize = '1rem';
+    setTimeout(function () {
+      button.style.fontSize = '1.2rem';
+    }, 100);
+  });
+}
