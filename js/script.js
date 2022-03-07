@@ -43,11 +43,12 @@ function playGame(playerInput) {
 }
 
 function resetGame() {
-  document.getElementById('messages').innerHTML = '';
-  document.getElementById('players').innerHTML = '';
-  document.getElementById('result').innerHTML = '';
+  document.getElementById('messages').textContent = '';
+  document.getElementById('players').textContent = '';
+  document.getElementById('result').textContent = '';
   computerScore = 0;
   playerScore = 0;
+  score = computerScore + ' - ' + playerScore;
 }
 
 let playerScore = 0;
