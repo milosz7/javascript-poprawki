@@ -1,0 +1,106 @@
+//variables
+
+@use 'variables' as *;
+
+//global
+
+body {
+  margin: 0;
+  font-size: 0.8rem;
+  background-image: url('../images/space.png');
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+//content
+
+.heading {
+  font-family: 'Press Start 2P', cursive;
+  margin-bottom: $gutter * 2;
+  color: $clr-navy;
+}
+
+.container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  max-height: 600px;
+  max-width: 450px;
+  text-align: center;
+  background: $clr-lgray;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px 10px 60px 10px;
+  border: 5px solid $clr-dgray;
+}
+
+//screen
+
+.screen {
+  font-family: 'Press Start 2P', cursive;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: column;
+  height: 250px;
+  width: 80%;
+  background-color: $clr-green;
+  margin-bottom: $gutter * 2;
+  padding: $gutter;
+  border: 2px solid $clr-dark;
+  border-radius: 5px 5px 30px 5px;
+}
+
+//buttons
+
+#buttons {
+  margin-bottom: $gutter;
+  display: inline-grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-start: -1;
+  gap: $gutter;
+  margin-left: 0;
+}
+
+#playScissors {
+  grid-column-start: 2;
+}
+
+.controls {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  border: 2px $clr-navy solid;
+  display: inline-block;
+  color: $clr-white;
+  background: $clr-buttons;
+  border-radius: 50%;
+  line-height: 56px;
+  height: 60px;
+  width: 60px;
+  font-size: 2rem;
+  -webkit-text-stroke: 1px $clr-navy;
+}
+
+.button-big {
+  border: 2px solid $clr-navy;
+  font-family: $font-main;
+  background: $clr-buttons;
+  color: $clr-white;
+  border-radius: 50%;
+  height: 120px;
+  aspect-ratio: 1;
+}
