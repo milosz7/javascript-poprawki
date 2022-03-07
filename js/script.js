@@ -32,6 +32,8 @@ if (computerMove === playerMove) {
   printMessage('You lose!');
 } else if (computerMove === 'paper' && playerMove === 'rock') {
   printMessage('You lose!');
+} else if (computerMove === 'rock' && playerMove === 'paper') {
+  printMessage('You win!');
 } else if (computerMove === 'scissors' && playerMove === 'rock') {
   printMessage('You win!');
 } else if (computerMove === 'paper' && playerMove === 'scissors') {
