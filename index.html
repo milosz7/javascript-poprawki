@@ -2,17 +2,44 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Kamień, papier, nożyce</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rock, Paper, Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <div class="container">
-      <div id="buttons">
-        <button id="playRock" type="button">Rock</button>
-        <button id="playPaper" type="button">Paper</button>
-        <button id="playScissors" type="button">Scissors</button>
+      <h1 class="heading">Rock, Paper, Scissors</h1>
+      <div class="screen">
+        <div id="messages"></div>
+        <div class="scoreboard">
+          <p id="players"></p>
+          <p id="result"></p>
+        </div>
       </div>
-      <div id="messages"></div>
+      <div class="controls">
+        <button class="button-big" id="buttonReset">Reset</button>
+        <div id="buttons">
+          <button class="button" id="playRock">
+            <i class="fas fa-hand-rock"></i>
+          </button>
+          <button class="button" id="playPaper">
+            <i class="fas fa-hand-paper"></i>
+          </button>
+          <button class="button" id="playScissors">
+            <i class="fas fa-hand-scissors"></i>
+          </button>
+        </div>
+      </div>
     </div>
     <script src="js/functions.js"></script>
     <script src="js/script.js"></script>
