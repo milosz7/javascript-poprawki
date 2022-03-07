@@ -1,43 +1,42 @@
 let moveRandomiser = Math.floor(Math.random() * 3 + 1);
 
-let computerMove = 'unknown';
+const computerMove = getMoveName(moveRandomiser);
 
-if (moveRandomiser === 1) {
-  computerMove = 'rock';
-} else if (moveRandomiser === 2) {
-  computerMove = 'paper';
-} else {
-  computerMove = 'scissors';
+console.log(computerMove);
+
+function getMoveName(moveId) {
+  moveId = parseInt(moveId);
+  if (moveId === 1) {
+    return 'rock';
+  } else if (moveId === 2) {
+    return 'paper';
+  } else if (moveId === 3) {
+    return 'scissors';
+  }
+  printMessage(playerInput + ' is an unknown move ID.');
+  return 'an unknown move';
 }
-
-let playerMove = 'unknown';
 
 let playerInput = prompt('Enter your move! 1: rock, 2: paper, 3: scissors.');
 
-if (playerInput === '1') {
-  playerMove = 'rock';
-} else if (playerInput === '2') {
-  playerMove = 'paper';
-} else if (playerInput === '3') {
-  playerMove = 'scissors';
+let playerMove = getMoveName(playerInput);
+
+function displayResult(computerMove, playerMove) {
+  printMessage('I played ' + computerMove + ', and you played ' + playerMove + '.');
+
+  if (playerInput > 3) {
+    printMessage('Enter a valid move.');
+  } else if (computerMove === playerMove) {
+    printMessage("It's a draw!");
+  } else if (
+    (computerMove === 'rock' && playerMove === 'paper') ||
+    (computerMove === 'scissors' && playerMove === 'rock') ||
+    (computerMove === 'paper' && playerMove === 'scissors')
+  ) {
+    printMessage('You win!');
+  } else {
+    printMessage('You lose!');
+  }
 }
 
-printMessage('I played ' + computerMove + ', and you played ' + playerMove + '.');
-
-if (computerMove === playerMove) {
-  printMessage("It's a draw!");
-} else if (computerMove === 'rock' && playerMove === 'scissors') {
-  printMessage('You lose!');
-} else if (computerMove === 'scissors' && playerMove === 'paper') {
-  printMessage('You lose!');
-} else if (computerMove === 'paper' && playerMove === 'rock') {
-  printMessage('You lose!');
-} else if (computerMove === 'rock' && playerMove === 'paper') {
-  printMessage('You win!');
-} else if (computerMove === 'scissors' && playerMove === 'rock') {
-  printMessage('You win!');
-} else if (computerMove === 'paper' && playerMove === 'scissors') {
-  printMessage('You win!');
-} else {
-  printMessage('This is not a valid move!');
-}
+displayResult(computerMove, playerMove);
