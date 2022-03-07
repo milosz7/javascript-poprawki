@@ -6,7 +6,6 @@ function playGame(playerInput) {
   const computerMove = getMoveName(moveRandomiser);
 
   function getMoveName(moveId) {
-    moveId = parseInt(moveId);
     if (moveId === 1) {
       return 'rock';
     } else if (moveId === 2) {
@@ -14,8 +13,6 @@ function playGame(playerInput) {
     } else if (moveId === 3) {
       return 'scissors';
     }
-    printMessage(playerInput + ' is an unknown move ID.');
-    return 'an unknown move';
   }
 
   let playerMove = getMoveName(playerInput);
@@ -23,9 +20,7 @@ function playGame(playerInput) {
   function displayResult(computerMove, playerMove) {
     printMessage('I played ' + computerMove + ', and you played ' + playerMove + '.');
 
-    if (playerInput > 3) {
-      printMessage('Enter a valid move.');
-    } else if (computerMove === playerMove) {
+    if (computerMove === playerMove) {
       printMessage("It's a draw!");
     } else if (
       (computerMove === 'rock' && playerMove === 'paper') ||
