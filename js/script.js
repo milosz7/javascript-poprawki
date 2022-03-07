@@ -28,20 +28,59 @@ function playGame(playerInput) {
       (computerMove === 'paper' && playerMove === 'scissors')
     ) {
       printMessage('You win!');
+      playerScore++;
+      score = computerScore + ' - ' + playerScore;
     } else {
       printMessage('You lose!');
+      computerScore++;
+      score = computerScore + ' - ' + playerScore;
     }
+    document.getElementById('players').textContent = 'Console - Player';
+    document.getElementById('result').textContent = score;
   }
 
   displayResult(computerMove, playerMove);
 }
 
+function resetGame() {
+  document.getElementById('messages').innerHTML = '';
+  document.getElementById('players').innerHTML = '';
+  document.getElementById('result').innerHTML = '';
+  computerScore = 0;
+  playerScore = 0;
+}
+
+let playerScore = 0;
+
+let computerScore = 0;
+
+let score = computerScore + ' - ' + playerScore;
+
 document.getElementById('playRock').addEventListener('click', function () {
   playGame(1);
+  this.style.fontSize = '1.8rem';
+  setTimeout(function () {
+    playRock.style.fontSize = '2rem';
+  }, 100);
 });
 document.getElementById('playPaper').addEventListener('click', function () {
   playGame(2);
+  this.style.fontSize = '1.8rem';
+  setTimeout(function () {
+    playPaper.style.fontSize = '2rem';
+  }, 100);
 });
 document.getElementById('playScissors').addEventListener('click', function () {
   playGame(3);
+  this.style.fontSize = '1.8rem';
+  setTimeout(function () {
+    playScissors.style.fontSize = '2rem';
+  }, 100);
+});
+document.getElementById('buttonReset').addEventListener('click', function () {
+  resetGame();
+  this.style.fontSize = '0.7rem';
+  setTimeout(function () {
+    buttonReset.style.fontSize = '0.8rem';
+  }, 100);
 });
