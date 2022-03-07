@@ -2,8 +2,6 @@ let moveRandomiser = Math.floor(Math.random() * 3 + 1);
 
 const computerMove = getMoveName(moveRandomiser);
 
-console.log(computerMove);
-
 function getMoveName(moveId) {
   moveId = parseInt(moveId);
   if (moveId === 1) {
