@@ -95,6 +95,7 @@ body {
 }
 
 .button-big {
+  font-size: 0.8rem;
   border: 2px solid $clr-navy;
   font-family: $font-main;
   background: $clr-buttons;
@@ -112,8 +113,8 @@ body {
   }
 
   .button-big {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
   }
 }
 
